@@ -17,5 +17,7 @@ COPY . .
 # Expondo a porta na qual a aplicação será executada
 EXPOSE 3033
 
+RUN chmod +x ./node_modules/.bin/nodemon
+
 # Comando para iniciar a aplicação
 CMD ["npm", "run", "dev"]
