@@ -1,0 +1,72 @@
+# Pipeline combinada para CI e CD
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  # Job de CI: Build e Push das imagens Docker
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Criando .env para credenciais do banco MongoDB
+        run: |
+          echo "MONGO_URL=${{ secrets.MONGO_URL }}" > backend/.env
+          
+      - name: Login DockerHub
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+      - name: Build Backend Docker image
+        run: docker build -t maathjason/pipelinegarms-backend -f backend/Dockerfile backend
+
+      - name: Build Frontend Docker image
+        run: docker build -t maathjason/pipelinegarms-frontend -f frontend/client/Dockerfile frontend
+
+      - name: Push Backend Docker image to DockerHub
+        run: docker push maathjason/pipelinegarms-backend
+
+      - name: Push Frontend Docker image to DockerHub
+        run: docker push maathjason/pipelinegarms-frontend
+
+  # Job de CD para o Backend
+  backend-deploy:
+    runs-on: [backend]
+    needs: build
+
+    steps:
+      - name: Apagando Imagens não Usadas
+        run: docker image prune -a -f
+
+      - name: Puxando a imagem Docker do backend
+        run: sudo docker pull maathjason/pipelinegarms-backend:latest
+
+      - name: Deletando o contêiner antigo
+        run: sudo docker rm -f garmspipeline-container || true
+
+      - name: Iniciando o contêiner de backend
+        run: sudo docker run -d -p 3000:3000 --name pipelinegarms-backend-container maathjason/pipelinegarms-backend:latest
+
+  # Job de CD para o Frontend
+  frontend-deploy:
+    runs-on: [frontend]
+    needs: backend-deploy
+
+    steps:
+      - name: Apagando Imagens não Usadas
+        run: docker image prune -a -f
+
+      - name: Puxando a imagem Docker do frontend
+        run: sudo docker pull maathjason/pipelinegarms-frontend:latest
+
+      - name: Deletando o contêiner antigo
+        run: sudo docker rm -f pipelinegarms-frontend-container || true
+
+      - name: Iniciando o contêiner de frontend
+        run: sudo docker run -d -p 80:80 -p 443:443 --name pipelinegarms-frontend-container maathjason/pipelinegarms-frontend-container:latest
