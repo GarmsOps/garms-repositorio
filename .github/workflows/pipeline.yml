@@ -51,7 +51,7 @@ jobs:
         run: sudo docker rm -f pipelinegarms-backend-container || true
 
       - name: Iniciando o contêiner de backend
-        run: sudo docker run -d -p 3000:3000 --name pipelinegarms-backend-container maathjason/pipelinegarms-backend:latest
+        run: sudo docker run -d -p 3033:3033 --name pipelinegarms-backend-container maathjason/pipelinegarms-backend:latest
 
   # Job de CD para o Frontend
   frontend-deploy:

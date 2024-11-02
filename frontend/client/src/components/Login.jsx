@@ -18,7 +18,7 @@ import LogoEtec from './LogoEtec';
       setError('');
 
       try {
-        const response = await fetch('http://localhost:3033/api/login', {
+        const response = await fetch('/api/login', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

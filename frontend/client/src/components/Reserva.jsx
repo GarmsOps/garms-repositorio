@@ -29,7 +29,7 @@ import LogoEtec from './LogoEtec';
     };
 
     const verificaReserva = async () => {
-      const response = await fetch(`http://localhost:3033/api/reservas?data=${data}`);
+      const response = await fetch(`/api/reservas?data=${data}`);
       
       if (!response.ok) {
         setError('Erro ao verificar reservas');

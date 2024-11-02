@@ -13,7 +13,7 @@ const ListaReservas = () => {
   useEffect(() => {
     const fetchReservas = async () => {
       try {
-        const response = await fetch('http://localhost:3033/api/reservas')
+        const response = await fetch('/api/reservas')
         const data= await response.json()
         setReservas(data)
       } catch (error) {
