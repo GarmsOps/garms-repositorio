@@ -8,8 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Instalando as dependências
-RUN npm install
-
+RUN npm install --production
 
 # Copiando o restante do código para o container
 COPY . .
@@ -20,4 +19,4 @@ EXPOSE 3033
 RUN chmod +x ./node_modules/.bin/nodemon
 
 # Comando para iniciar a aplicação
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
