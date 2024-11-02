@@ -48,7 +48,7 @@ jobs:
         run: sudo docker pull maathjason/pipelinegarms-backend:latest
 
       - name: Deletando o contêiner antigo
-        run: sudo docker rm -f garmspipeline-container || true
+        run: sudo docker rm -f pipelinegarms-backend-container || true
 
       - name: Iniciando o contêiner de backend
         run: sudo docker run -d -p 3000:3000 --name pipelinegarms-backend-container maathjason/pipelinegarms-backend:latest
