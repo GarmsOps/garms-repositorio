@@ -69,4 +69,4 @@ jobs:
         run: sudo docker rm -f pipelinegarms-frontend-container || true
 
       - name: Iniciando o contêiner de frontend
-        run: sudo docker run -d -p 80:80 -p 443:443 --name pipelinegarms-frontend-container maathjason/pipelinegarms-frontend-container:latest
+        run: sudo docker run -d -p 80:80 -p 443:443 --name pipelinegarms-frontend-container maathjason/pipelinegarms-frontend:latest
