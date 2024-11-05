@@ -5,13 +5,13 @@
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
     font-size: 1.3rem;
-    color: black;
+    color: rgba(68, 4, 4, 0.76);
     padding: 2px;
     text-align: center;
     border-radius: 10px;
 }
 
-.nome{
+.nome span{
     font-size: 1.3rem;
     color: blueviolet;
 }
