@@ -2,7 +2,6 @@ id:
   org: 47efab5e-49a4-458c-ba9c-780e345924d2
   app: 6d6145e2-fab8-424a-91ef-62f9901eaf3e
 
-# If below settings are not configured, scans will be performed for all supported scanners.
 scanners:
   - sast
   - sca
