@@ -1,19 +1,19 @@
 id:
   org: 47efab5e-49a4-458c-ba9c-780e345924d2
-  app: eb864d87-b73c-4a25-b8e6-53cc6215cfa9
+  app: 6d6145e2-fab8-424a-91ef-62f9901eaf3e
 
 # If below settings are not configured, scans will be performed for all supported scanners.
-#scanners:
-#  - sast
-#  - sca
-#  - secret
-#  - iac
-#  - container
-#  - dast
+scanners:
+  - sast
+  - sca
+  - secret
+  - iac
+  - container
+  - dast
 
 # Configures languages for sast scanner. If not configured, scans will be performed on all supported languages
-#languages:
-#  - javascript
+languages:
+  - javascript
 #  - python
 
 # Configures target url where dynamic scan should be performed.
@@ -37,4 +37,3 @@ id:
 # Only for FortiDevSec OnPrem users. Cloud users should keep it commented
 #on_prem:
 #  sec_ops_server: {your_onprem_fortidevsec_server_url}
-
