@@ -2,14 +2,6 @@ id:
   org: 47efab5e-49a4-458c-ba9c-780e345924d2
   app: 6d6145e2-fab8-424a-91ef-62f9901eaf3e
 
-scanners:
-  - sast
-  - sca
-  - secret
-  - iac
-  - container
-  - dast
-
 # Configures languages for sast scanner. If not configured, scans will be performed on all supported languages
 languages:
   - javascript
