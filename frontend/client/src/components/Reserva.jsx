@@ -71,7 +71,7 @@ import LogoEtec from './LogoEtec';
 
         console.log('Nova Reserva:', novaReserva); // Para depuração
 
-        const response = await fetch('http://localhost:3033/api/reservas', {
+        const response = await fetch('/api/reservas', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
