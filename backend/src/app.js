@@ -15,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 3033;
 
 app.use(cors({
-    origin: 'http://garmsops.com.br',
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
