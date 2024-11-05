@@ -11,8 +11,7 @@
     border-radius: 10px;
 }
 
-span {
-    /*color: rgb(131, 0, 0);*/
-    color: rgb(12, 75, 200);
+.nome{
     font-size: 1.3rem;
+    color: blueviolet;
 }
