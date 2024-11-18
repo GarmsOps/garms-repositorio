@@ -47,7 +47,7 @@ app.post('/api/login', async (req, res) => {
 
     try {
         const user = await Professor.findOne({ email });
-        if (user && user.senha === senha) { // Verifica se a senha está correta
+        if (user && user.senha === senha && user.ra === ra) { // Verifica se a senha está correta
             const token = jwt.sign({ id: user.id, ra: user.ra, nome: user.nome }, 'segredo', { expiresIn: '1h' });
             res.status(200).json({ token, nome: user.nome });
         } else {
