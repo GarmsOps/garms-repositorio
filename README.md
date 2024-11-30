@@ -11,6 +11,9 @@
 <br>
 <strong>Colaboradores:</strong><br>
 <a> João Emanuel</a><br>
+<a>Weverson Pereira</a><br>
+<a>Ryan Amaral</a><br>
+<a>Gabriel Soares</a><br>
 <a>Mateus Sousa</a><br>
 <a>Murilo Weishaupt</a><br><br>
 
