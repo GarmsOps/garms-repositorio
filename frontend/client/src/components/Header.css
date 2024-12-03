@@ -25,6 +25,8 @@
 
 .header .user-logged p {
     position: absolute;
+    text-align: center;
+    top: 2.5%;
     left: 6%;
     margin-left: 2px;
     font-size: 1.2rem;
@@ -44,7 +46,8 @@
 
 .img-professor {
     position: absolute;
-    top: 6px;
+    margin-top: 2.5%;
+    /* top: 6px; */
     left: 80%;
     border-radius: 50%;
     height: 70px;
