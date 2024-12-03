@@ -8,7 +8,7 @@ const Header = ({ nome }) => {
                 <LogoEtec/>
                 <h2>Sistema de Reserva de Auditório</h2>
                 <div className="user-logged">
-                    {nome && <p><span>Usuário logado:br</span> {nome}</p>}
+                    {nome && <p><span>Usuário logado:<br></br></span> {nome}</p>}
                     {/* <p>Usuário Logado:br Murilo Weishaupt</p> */}
                     <img className="img-professor" src="https://www.etecdeembu.com.br/assets/img/funcionarios/23.png" alt="" />
                 </div> 
