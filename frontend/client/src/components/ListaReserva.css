@@ -1,3 +1,19 @@
+html, body {
+  margin: 0;      /* Remove a margem padrão */
+  padding: 0;     /* Remove o padding padrão */
+  height: 100%;   /* Garante que o body tenha 100% da altura da tela */
+  width: 100%;    /* Garante que o body tenha 100% da largura da tela */
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./img/auditorio.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .lista-reservas {
     font-family: "Nunito", sans-serif;
     padding: 20px;
