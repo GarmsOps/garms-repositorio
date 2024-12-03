@@ -25,37 +25,38 @@ const ListaReservas = () => {
   }, [])
 
   return (
-    <div className="lista-reservas">
-      <LogoEtec/>
-      <Header nome={user?.nome}/>
-      <h2>Lista de Reservas</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Nome do Professor</th>
-            <th>Data</th>
-            <th>Horário</th>
-            <th>Descrição</th>
-            <th>Turma</th>
-            <th>Bloco</th>
-          </tr>
-        </thead>
-        <tbody>
-          {reservas.map(reserva => (
-            <tr key={reserva.id}>
-              <td>{reserva.nome}</td>
-              <td>{format(parseISO(reserva.data), 'dd/MM/yyyy')}</td>
-              <td><p>Das {reserva.horarioEntrada}h às {reserva.horarioSaida}h</p></td>
-              <td>{reserva.descricao}</td>
-              <td>{reserva.turma}</td>
-              <td>{reserva.bloco}</td>
-
+    <div className="container">
+      <div className="lista-reservas">
+        <LogoEtec/>
+        <Header nome={user?.nome}/>
+        <h2>Lista de Reservas</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome do Professor</th>
+              <th>Data</th>
+              <th>Horário</th>
+              <th>Descrição</th>
+              <th>Turma</th>
+              <th>Bloco</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="buttonReservar">
-        <button><a href="/reservar">Faça a sua reserva</a></button>
+          </thead>
+          <tbody>
+            {reservas.map(reserva => (
+              <tr key={reserva.id}>
+                <td>{reserva.nome}</td>
+                <td>{format(parseISO(reserva.data), 'dd/MM/yyyy')}</td>
+                <td><p>Das {reserva.horarioEntrada}h às {reserva.horarioSaida}h</p></td>
+                <td>{reserva.descricao}</td>
+                <td>{reserva.turma}</td>
+                <td>{reserva.bloco}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="buttonReservar">
+          <button><a href="/reservar">Faça a sua reserva</a></button>
+        </div>
       </div>
     </div>
   );
