@@ -1,17 +1,53 @@
+.header {
+    background-color: #ccc;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 15%;
+    width: 100%;
+    border-bottom: 2px solid #A7A7A7;
+}
+
 .header .user-logged {
     position: absolute;
     top: 1%;
     left: 75%;
+    width: 20%;
+    height: 95%;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
-    font-size: 1.3rem;
     color: rgba(68, 4, 4, 0.76);
     padding: 2px;
+    padding-left: 1px;
     text-align: center;
-    border-radius: 10px;
+    border-left: 2px solid #A7A7A7;
 }
+
+.header .user-logged p {
+    position: absolute;
+    left: 6%;
+    margin-left: 2px;
+    font-size: 1.2rem;
+    max-width: 70%;
+}
+
+.header h2 {
+    color: #3A5761;
+    margin-top: 2.5%;
+}
+
 
 .nome span{
     font-size: 1.3rem;
     color: blueviolet;
+}
+
+.img-professor {
+    position: absolute;
+    top: 6px;
+    left: 80%;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    border: 2px solid #3A5761;
 }
