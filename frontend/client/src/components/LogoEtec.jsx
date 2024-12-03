@@ -1,9 +1,10 @@
 import './LogoEtec.css'
+import etecLogo from './img/etec.png';
 
 function LogoEtec() {
     return (
-        <img src="./img/etec.png" alt="Logo Etec Embu" />
-    )
+        <img src={etecLogo} alt="Logo Etec Embu" />
+    );
 }
 
-export default LogoEtec
+export default LogoEtec;
