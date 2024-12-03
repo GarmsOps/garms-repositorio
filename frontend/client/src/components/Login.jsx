@@ -59,7 +59,7 @@ import LogoEtec from './LogoEtec';
             <input
               type="email"
               id="email"
-              autocomplete="off"
+              autoComplete="off"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -80,7 +80,7 @@ import LogoEtec from './LogoEtec';
             <input
               type="text"
               id="ra"
-              autocomplete="off"
+              autoComplete="off"
               value={ra}
               onChange={(e) => setRa(e.target.value)}
               
